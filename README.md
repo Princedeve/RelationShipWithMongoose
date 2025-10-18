@@ -1,26 +1,26 @@
-# Relationship Project
+# Relationship Demo Project
 
-This project is a **Node.js backend application** that uses **Mongoose** to manage relationships data. It allows storing, updating, and retrieving information in a **MongoDB** database efficiently.
+This project demonstrates **MongoDB relationships** using **Mongoose** in Node.js.  
+It focuses on understanding how **One-to-One** and **One-to-Many** relationships work.
 
 ## Features
 
-- CRUD operations (Create, Read, Update, Delete) for relationships
-- MongoDB database integration using Mongoose
-- Easy to extend for additional features
-- Well-structured backend code
+- Simple examples of MongoDB relationships
+- One-to-One relationship
+- One-to-Many relationship
+- Uses Mongoose models and references
+- Educational and easy to understand
 
 ## Technologies Used
 
 - Node.js
-- Express.js
 - MongoDB
 - Mongoose
 - JavaScript
 
-## Installation
+## How to Run
 
 1. Clone the repository:
 
 ```bash
 git clone https://github.com/your-username/Relationship.git
-
