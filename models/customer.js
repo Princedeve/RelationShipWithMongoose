@@ -42,6 +42,8 @@ const addCustomer = async ()=>{
     console.log(result);
 };
 
+addCustomer();
+
 // const addOrders = async ()=>{
 //    let res = await Order.insertMany([
 //     { item: "Samosa", price: 15 },
