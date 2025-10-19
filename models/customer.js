@@ -8,3 +8,4 @@ main().then((res) => { console.log("connected to DB") }).catch((err) =>{ console
 async function main() {
     await mongoose.connect(MONGO_URL);
 }
+
