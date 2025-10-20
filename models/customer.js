@@ -44,14 +44,14 @@ const addCustomer = async ()=>{
 
 addCustomer();
 
-// const addOrders = async ()=>{
-//    let res = await Order.insertMany([
-//     { item: "Samosa", price: 15 },
-//     { item: "Chips", price: 10 },
-//     { item: "Chocolate", price: 40},
-//    ]
-//    );
-//    console.log(res);
-// };
+const addOrders = async ()=>{
+   let res = await Order.insertMany([
+    { item: "Samosa", price: 15 },
+    { item: "Chips", price: 10 },
+    { item: "Chocolate", price: 40},
+   ]
+   );
+   console.log(res);
+};
 
-// addOrders();
+addOrders();
