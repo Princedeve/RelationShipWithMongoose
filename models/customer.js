@@ -27,7 +27,7 @@ const customerSchema = new Schema({
 const Order = mongoose.model("Oder", orderSchema);
 const Customer = mongoose.model("Customer", customerSchema);
 
-const addCustomer = async ()=>{
+// const addCustomer = async ()=>{
     // let cust1 = new Customer({
     //     name: "Rahul Kumar",
     // });
@@ -41,11 +41,16 @@ const addCustomer = async ()=>{
     // let result = await cust1.save();
     // console.log(result);
 
+// };
+
+// addCustomer();
+
+const findCustomer = async () =>{
     let res = await Customer.find({});
     console.log(res);
-};
+}
 
-addCustomer();
+findCustomer();
 
 // const addOrders = async ()=>{
 //    let res = await Oder.insertMany([
