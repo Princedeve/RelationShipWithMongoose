@@ -46,7 +46,7 @@ const Customer = mongoose.model("Customer", customerSchema);
 // addCustomer();
 
 const findCustomer = async () =>{
-    let res = await Customer.find({}).populate("orders");
+    let res = await Customer.find({}).populate("orders");//populate use for getting info of object not only id
     console.log(res[0]);
 }
 
