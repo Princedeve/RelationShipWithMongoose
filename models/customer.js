@@ -19,7 +19,7 @@ const customerSchema = new Schema({
     orders: [
         {
             type: Schema.Types.ObjectId,
-            ref: "Order"
+            ref: "Oder"// refrence pointing Order model to extract order id
         },
     ],
 });
@@ -27,25 +27,28 @@ const customerSchema = new Schema({
 const Order = mongoose.model("Oder", orderSchema);
 const Customer = mongoose.model("Customer", customerSchema);
 
-// const addCustomer = async ()=>{
-//     let cust1 = new Customer({
-//         name: "Rahul Kumar",
-//     });
+const addCustomer = async ()=>{
+    // let cust1 = new Customer({
+    //     name: "Rahul Kumar",
+    // });
 
-//     let order1 = await Order.findOne({ item: "Chips" });
-//     let order2 = await Order.findOne({ item: "Chocolate" });
+    // let order1 = await Oder.findOne({ item: "Chips" });
+    // let order2 = await Oder.findOne({ item: "Chocolate" });
 
-//     cust1.orders.push(order1);
-//     cust1.orders.push(order2);
+    // cust1.orders.push(order1);
+    // cust1.orders.push(order2);
 
-//     let result = await cust1.save();
-//     console.log(result);
-// };
+    // let result = await cust1.save();
+    // console.log(result);
 
-// addCustomer();
+    let res = await Customer.find({});
+    console.log(res);
+};
+
+addCustomer();
 
 // const addOrders = async ()=>{
-//    let res = await Order.insertMany([
+//    let res = await Oder.insertMany([
 //     { item: "Samosa", price: 15 },
 //     { item: "Chips", price: 10 },
 //     { item: "Chocolate", price: 40},
