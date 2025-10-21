@@ -24,7 +24,7 @@ const customerSchema = new Schema({
     ],
 });
 
-const Order = mongoose.model("Oder", orderSchema);
+const Oder = mongoose.model("Oder", orderSchema);
 const Customer = mongoose.model("Customer", customerSchema);
 
 // const addCustomer = async ()=>{
@@ -46,8 +46,8 @@ const Customer = mongoose.model("Customer", customerSchema);
 // addCustomer();
 
 const findCustomer = async () =>{
-    let res = await Customer.find({});
-    console.log(res);
+    let res = await Customer.find({}).populate("orders");
+    console.log(res[0]);
 }
 
 findCustomer();
