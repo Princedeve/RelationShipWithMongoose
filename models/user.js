@@ -37,4 +37,3 @@ const addUsers = async () => {
 };
 
 addUsers();
-
