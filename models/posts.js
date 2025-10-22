@@ -43,3 +43,4 @@ const addData = async ()=>{
     await post1.save();
 };
 
+addData();
