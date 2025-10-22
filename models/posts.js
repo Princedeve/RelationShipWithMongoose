@@ -8,3 +8,20 @@ main().then((res) => { console.log("connected to DB") }).catch((err) =>{ console
 async function main() {
     await mongoose.connect(MONGO_URL);
 }
+
+const userSchema = new Schema({
+    username: String,
+    email: String
+});
+
+const postSchema = new Schema({
+    content: String,
+    likes: Number,
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: "User"
+    }
+});
+
+const User = mongoose.model("User", userSchema);
+const Post = mongoose.model("Post", postSchema);
