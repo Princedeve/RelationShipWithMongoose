@@ -43,4 +43,16 @@ const Post = mongoose.model("Post", postSchema);
 //     await post1.save();
 // };
 
+const addData = async () =>{
+    let user = await User.find({username: "rahulkumar"});
+
+    let post2 = new Post({
+        content: "Bye Bye :)",
+        likes: 23,
+    });
+
+    post2.user = user;
+    await post2.save();
+}
+
 addData();
