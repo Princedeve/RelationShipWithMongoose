@@ -59,10 +59,12 @@ const Post = mongoose.model("Post", postSchema);
 
 // addData();
 
-const findUser = async () =>{
-    let users = await User.find({});
-    console.log(users);
-    console.log(users[0]);
-}
+  const getData = async ()=>{
+    let result = await Post.find({}).populate("user");
+    let username = await Post.find({}).populate("user", "username");
 
-findUser();
+    console.log(result);//user all details
+    // console.log(username);//only for username
+  }
+
+  getData();
