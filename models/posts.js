@@ -68,3 +68,5 @@ const Post = mongoose.model("Post", postSchema);
   }
 
   getData();
+
+  
