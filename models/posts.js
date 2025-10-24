@@ -14,7 +14,7 @@ const userSchema = new Schema({
     email: String
 });
 
-const postSchema = new Schema({
+const postSchema = new Schema({//parent ko directliy store kara in child document
     content: String,
     likes: Number,
     user: {
