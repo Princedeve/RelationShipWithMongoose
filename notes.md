@@ -1,3 +1,4 @@
+https://www.mongodb.com/company/blog/mongodb/6-rules-of-thumb-for-mongodb-schema-design
 
 I have lots of experience with SQL and normalized databases, but I’m just a beginner with MongoDB. How do I model a one-to-N relationship?” This is one of the more common questions I get from users attending MongoDB office hours.
 
