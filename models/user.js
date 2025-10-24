@@ -9,7 +9,7 @@ async function main() {
     await mongoose.connect(MONGO_URL);
 }
 
-const userSchema = new Schema({
+const userSchema = new Schema({// <100s : embed
     username: String,
     addresses: [
         {

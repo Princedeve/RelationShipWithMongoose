@@ -14,7 +14,7 @@ const orderSchema = new Schema({
     price: Number,
 });
 
-const customerSchema = new Schema({
+const customerSchema = new Schema({ // >100s: array objectId reference
     name: String,
     orders: [
         {
