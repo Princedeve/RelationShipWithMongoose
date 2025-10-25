@@ -24,12 +24,16 @@ const customerSchema = new Schema({ // >100s: array objectId reference
     ],
 });
 
-// customerSchema.pre("findOneAndDelete", async()=>{
-//     console.log("PRE MIDDLEWARE");
+// customerSchema.pre("findOneAndDelete", async(customer)=>{
+//     console.log(customer);//PRE MIDDLEWARE
 // });
 
-customerSchema.post("findOneAndDelete", async()=>{
-    console.log("POST MIDDLEWARE");
+customerSchema.post("findOneAndDelete", async(customer)=>{
+    //POST MIDDLEWARE
+    if(customer.oders.length){
+      let res = await Oder.deleteMany({_id: { $in: customer.oders } });//oder list delete using $in operator
+      console.log(res);
+    }
 });
 
 const Oder = mongoose.model("Oder", orderSchema);
@@ -78,7 +82,7 @@ const addCust = async () =>{
     });
 
     let newOrder = new Oder({
-        item: "Pizza",
+        item: "Burger",
         price: 250
     });
 
@@ -92,9 +96,10 @@ const addCust = async () =>{
 }
 
 const delCust = async () => {
-    let data = await Customer.findByIdAndDelete("68fca4716af5e4f172134a4b");
+    let data = await Customer.findByIdAndDelete("68fcbb7a4b8c1a179ee642aa");
     console.log(data);
+
 };
 
 // addCust();
-// delCust();
+delCust();
