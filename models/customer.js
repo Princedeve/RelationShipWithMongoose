@@ -16,7 +16,7 @@ const orderSchema = new Schema({
 
 const customerSchema = new Schema({ // >100s: array objectId reference
     name: String,
-    orders: [
+    oders: [
         {
             type: Schema.Types.ObjectId,
             ref: "Oder"// refrence pointing Order model to extract order id
@@ -45,12 +45,12 @@ const Customer = mongoose.model("Customer", customerSchema);
 
 // addCustomer();
 
-const findCustomer = async () =>{
-    let res = await Customer.find({}).populate("orders");//populate use for getting info of object not only id
-    console.log(res[0]);
-}
+// const findCustomer = async () =>{
+//     let res = await Customer.find({}).populate("orders");//populate use for getting info of object not only id
+//     console.log(res[0]);
+// }
 
-findCustomer();
+// findCustomer();
 
 // const addOrders = async ()=>{
 //    let res = await Oder.insertMany([
@@ -64,3 +64,23 @@ findCustomer();
 
 // addOrders();
 
+const addCust = async () =>{
+    let newCust = new Customer({
+        name: "Aman Thakur"
+    });
+
+    let newOrder = new Oder({
+        item: "Pizza",
+        price: 250
+    });
+
+    newCust.oders.push(newOrder);
+
+    let resC = await newCust.save();
+    let  resO = await newOrder.save();
+    console.log("added new customer");
+    console.log(resC);
+    console.log(resO);
+}
+
+addCust();
