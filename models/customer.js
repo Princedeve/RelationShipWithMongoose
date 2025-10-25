@@ -24,6 +24,14 @@ const customerSchema = new Schema({ // >100s: array objectId reference
     ],
 });
 
+// customerSchema.pre("findOneAndDelete", async()=>{
+//     console.log("PRE MIDDLEWARE");
+// });
+
+customerSchema.post("findOneAndDelete", async()=>{
+    console.log("POST MIDDLEWARE");
+});
+
 const Oder = mongoose.model("Oder", orderSchema);
 const Customer = mongoose.model("Customer", customerSchema);
 
@@ -88,5 +96,5 @@ const delCust = async () => {
     console.log(data);
 };
 
-addCust();
-//delCust();
+// addCust();
+// delCust();
