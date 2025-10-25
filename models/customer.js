@@ -83,4 +83,10 @@ const addCust = async () =>{
     console.log(resO);
 }
 
+const delCust = async () => {
+    let data = await Customer.findByIdAndDelete("68fca4716af5e4f172134a4b");
+    console.log(data);
+};
+
 addCust();
+//delCust();
